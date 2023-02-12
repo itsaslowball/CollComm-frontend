@@ -4,15 +4,15 @@ import React, { useEffect, useState } from 'react'
 import { ChatState } from '../Context/ChatProvider';
 
 const CreateBlog = ({ fetchAgain, setFetchAgain }) => {
-    
+    const url = "https://collcomm-api.onrender.com";
 const { user, blogs, setBlogs } = ChatState();
 const [title, setTitle] = useState();
 const [content, setContent] = useState();
 
 
-const submitHandler = async () => {
+  const submitHandler = async () => {
   try {
-    const { data } = await axios.post("/api/blogs/compose", {
+    const { data } = await axios.post(url + "/api/blogs/compose", {
       title: title,
       postContent: content,
       user: user,

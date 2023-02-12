@@ -17,6 +17,7 @@ import ProfileModal from "../components/miscellaneous/ProfileModal";
 
 
 const AllBlogs = ({ fetchAgain, setFetchAgain }) => {
+  const url = "https://collcomm-api.onrender.com";
   const {  blogs, setBlogs } = ChatState();
   const [search, setSearch] = useState();
   const [allblogs, setAllBlogs] = useState(true)
@@ -24,7 +25,7 @@ const AllBlogs = ({ fetchAgain, setFetchAgain }) => {
   const user = JSON.parse(localStorage.getItem("userInfo"));
 
   const showBlogs = async () => {
-    const { data } = await axios.get("/api/blogs");
+    const { data } = await axios.get(url + "/api/blogs");
     setBlogs(data);
     setAllBlogs(true);
   };
@@ -35,7 +36,7 @@ const AllBlogs = ({ fetchAgain, setFetchAgain }) => {
   const deleteHandler = (e) => {
     const blogId = e.target.value;
     console.log(blogId);
-    axios.post('/api/blogs/deleteblog', { blogId } );
+    axios.post(url + '/api/blogs/deleteblog', { blogId } );
     setFetchAgain(!fetchAgain)
   }
 
@@ -47,12 +48,12 @@ const AllBlogs = ({ fetchAgain, setFetchAgain }) => {
   }, [fetchAgain]);
 
   const handleSearch = async() => {
-    const { data } = await axios.get(`/api/blogs?search=${search}`);
+    const { data } = await axios.get(url + `/api/blogs?search=${search}`);
     setBlogs(data);
     setAllBlogs(false);
   }
     const handleSearch2 = async () => {
-      const { data } = await axios.get(`/api/blogs`);
+      const { data } = await axios.get(url + `/api/blogs`);
       setBlogs(data);
       setAllBlogs(true);
     };

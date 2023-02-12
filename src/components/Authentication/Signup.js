@@ -22,7 +22,7 @@ const Signup = () => {
     const history = useHistory();
 
     const handleClick = () => setShow(!show);
-
+const url = "https://collcomm-api.onrender.com";
 
   const postDetails = (pics) => {
     setPicLoading(true);
@@ -100,7 +100,7 @@ const Signup = () => {
           "Content-type": "application/json",
         },
       };
-      const { data } = await axios.post( "/api/user",{ name, email, password, pic, skills, skillRating },config);
+      const { data } = await axios.post(url +  "/api/user",{ name, email, password, pic, skills, skillRating },config);
        toast({
          title: "Registration Successfull!",
          status: "success",

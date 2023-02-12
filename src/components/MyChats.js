@@ -11,6 +11,8 @@ import GroupChatModal from './miscellaneous/GroupChatModal';
 const MyChats = ({fetchAgain, setFetchAgain}) => {
 
   // const [loggedUser, setLoggedUser] = useState();
+
+  const url = "https://collcomm-api.onrender.com";
     const [loggedUser, setLoggedUser] = useState(() => {
       return JSON.parse(localStorage.getItem("userInfo")) || [];
     });
@@ -27,7 +29,7 @@ const MyChats = ({fetchAgain, setFetchAgain}) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get("/api/chat", config);
+      const { data } = await axios.get(url + "/api/chat", config);
       setChats(data);
       setLoading(false);
     }

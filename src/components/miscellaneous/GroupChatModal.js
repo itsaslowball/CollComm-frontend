@@ -26,7 +26,7 @@ const GroupChatModal = ({ children, fetchAgain, setFetchAgain }) => {
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
-
+const url = "https://collcomm-api.onrender.com";
   const toast = useToast();
 
   const { user, chats, setChats } = ChatState();
@@ -43,7 +43,7 @@ const GroupChatModal = ({ children, fetchAgain, setFetchAgain }) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(url + `/api/user?search=${search}`, config);
 
       setLoading(false);
       setSearchResult(data);
@@ -79,7 +79,7 @@ const GroupChatModal = ({ children, fetchAgain, setFetchAgain }) => {
       };
 
       const { data } = await axios.post(
-        `/api/chat/group`,
+       url +  `/api/chat/group`,
         {
           name: groupChatName,
           users: JSON.stringify(selectedUsers.map((u) => u._id)),

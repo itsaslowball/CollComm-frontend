@@ -15,7 +15,7 @@ const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
-
+const url = "https://collcomm-api.onrender.com";
 
   const history = useHistory();
 
@@ -43,7 +43,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "/api/user/login",
+        url + "/api/user/login",
         { email, password },
         config
       );

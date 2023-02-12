@@ -16,6 +16,7 @@ var socket, selectedChatCompare;
 
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
+  const url = "https://collcomm-api.onrender.com";
     
   const { user, selectedChat, setSelectedChat } = ChatState();
   const newUser = JSON.parse(localStorage.getItem("userInfo"));
@@ -43,7 +44,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         },
       };
       setLoading(true)
-      const { data } = await axios.get(`/api/message/${selectedChat._id}`, config);
+      const { data } = await axios.get(url + `/api/message/${selectedChat._id}`, config);
       console.log(data);
       setMessages(data);
       setLoading(false);
@@ -73,7 +74,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
         };
         setNewMessage("");
-        const { data } = await axios.post('/api/message', {
+        const { data } = await axios.post(url + '/api/message', {
           content: newMessage,
           chatId: selectedChat._id,
         }, config);

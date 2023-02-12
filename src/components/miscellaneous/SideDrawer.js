@@ -41,7 +41,7 @@ const SideDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure(); // This is coming from chakra ui for the drawer
   const history = useHistory(); //To navigate
   const toast = useToast(); //To create simple pop up
-
+const url = "https://collcomm-api.onrender.com";
   //-----------------Logout Function-------------------------//
 
   const logoutHandler = () => {
@@ -75,7 +75,7 @@ const SideDrawer = () => {
       };
 
       const { data } = await axios.get(
-        `/api/user?search=${search}`,
+       url +  `/api/user?search=${search}`,
         config
       ); /*This fetches the data from the given route and config
       is also send for the user authentication*/

@@ -15,7 +15,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
     const [renameloading, setRenameloading] = useState(false);
 
     const toast = useToast();
-
+const url = "https://collcomm-api.onrender.com";
 
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { selectedChat, setSelectedChat, user } = ChatState();
@@ -52,7 +52,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
                },
              };
              const { data } = await axios.put(
-               `/api/chat/groupadd`,
+              url +  `/api/chat/groupadd`,
                {
                  chatId: selectedChat._id,
                  userId: user1._id,
