@@ -16,7 +16,7 @@ var socket, selectedChatCompare;
 
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
-  const url = "https://collcomm-api.onrender.com";
+const url = "https://colcom-api.onrender.com";
     
   const { user, selectedChat, setSelectedChat } = ChatState();
   const newUser = JSON.parse(localStorage.getItem("userInfo"));

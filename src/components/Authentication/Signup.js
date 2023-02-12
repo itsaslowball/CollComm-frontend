@@ -22,7 +22,7 @@ const Signup = () => {
     const history = useHistory();
 
     const handleClick = () => setShow(!show);
-const url = "https://collcomm-api.onrender.com";
+const url = "https://colcom-api.onrender.com";
 
   const postDetails = (pics) => {
     setPicLoading(true);

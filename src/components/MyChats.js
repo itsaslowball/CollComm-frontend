@@ -12,7 +12,7 @@ const MyChats = ({fetchAgain, setFetchAgain}) => {
 
   // const [loggedUser, setLoggedUser] = useState();
 
-  const url = "https://collcomm-api.onrender.com";
+const url = "https://colcom-api.onrender.com";
     const [loggedUser, setLoggedUser] = useState(() => {
       return JSON.parse(localStorage.getItem("userInfo")) || [];
     });

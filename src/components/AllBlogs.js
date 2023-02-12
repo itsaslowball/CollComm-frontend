@@ -17,7 +17,7 @@ import ProfileModal from "../components/miscellaneous/ProfileModal";
 
 
 const AllBlogs = ({ fetchAgain, setFetchAgain }) => {
-  const url = "https://collcomm-api.onrender.com";
+const url = "https://colcom-api.onrender.com";
   const {  blogs, setBlogs } = ChatState();
   const [search, setSearch] = useState();
   const [allblogs, setAllBlogs] = useState(true)

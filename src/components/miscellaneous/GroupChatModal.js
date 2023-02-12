@@ -26,7 +26,7 @@ const GroupChatModal = ({ children, fetchAgain, setFetchAgain }) => {
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
-const url = "https://collcomm-api.onrender.com";
+const url = "https://colcom-api.onrender.com";
   const toast = useToast();
 
   const { user, chats, setChats } = ChatState();

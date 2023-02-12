@@ -15,7 +15,7 @@ const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
-const url = "https://collcomm-api.onrender.com";
+const url = "https://colcom-api.onrender.com";
 
   const history = useHistory();
 

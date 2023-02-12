@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { ChatState } from '../Context/ChatProvider';
 
 const CreateBlog = ({ fetchAgain, setFetchAgain }) => {
-    const url = "https://collcomm-api.onrender.com";
+const url = "https://colcom-api.onrender.com";
 const { user, blogs, setBlogs } = ChatState();
 const [title, setTitle] = useState();
 const [content, setContent] = useState();

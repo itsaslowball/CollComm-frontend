@@ -41,7 +41,7 @@ const SideDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure(); // This is coming from chakra ui for the drawer
   const history = useHistory(); //To navigate
   const toast = useToast(); //To create simple pop up
-const url = "https://collcomm-api.onrender.com";
+const url = "https://colcom-api.onrender.com";
   //-----------------Logout Function-------------------------//
 
   const logoutHandler = () => {
