@@ -100,7 +100,7 @@ const url = "https://colcom-api.onrender.com";
           "Content-type": "application/json",
         },
       };
-      const { data } = await axios.post("/api/user",{ name, email, password, pic, skills, skillRating },config);
+      const { data } = await axios.post(url + "/api/user",{ name, email, password, pic, skills, skillRating },config);
        toast({
          title: "Registration Successfull!",
          status: "success",

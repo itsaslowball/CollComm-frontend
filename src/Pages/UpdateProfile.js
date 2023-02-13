@@ -31,7 +31,8 @@ const UpdateProfile = () => {
         const [picLoading, setPicLoading] = useState(false);
         const toast = useToast();
         const history = useHistory();
-    
+    const url = "https://colcom-api.onrender.com";
+
 
       const { fetchAgain, setFetchAgain } = ChatState();
 
@@ -95,7 +96,7 @@ const UpdateProfile = () => {
             },
           };
           const { data } = await axios.put(
-            "/api/user/updateprofile",
+           url +  "/api/user/updateprofile",
             {name,email, pic, skills, skillRating},
             config
           );

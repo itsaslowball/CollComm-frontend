@@ -25,7 +25,7 @@ const url = "https://colcom-api.onrender.com";
   const user = JSON.parse(localStorage.getItem("userInfo"));
 
   const showBlogs = async () => {
-    const { data } = await axios.get("/api/blogs");
+    const { data } = await axios.get(url + "/api/blogs");
     setBlogs(data);
     setAllBlogs(true);
   };
@@ -48,7 +48,7 @@ const url = "https://colcom-api.onrender.com";
   }, [fetchAgain]);
 
   const handleSearch = async() => {
-    const { data } = await axios.get(`/api/blogs?search=${search}`);
+    const { data } = await axios.get(url + `/api/blogs?search=${search}`);
     setBlogs(data);
     setAllBlogs(false);
   }
