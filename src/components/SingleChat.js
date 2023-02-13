@@ -44,11 +44,10 @@ const url = "https://colcom-api.onrender.com";
         },
       };
       setLoading(true)
-      const { data } = await axios.get(url + `/api/message/${selectedChat._id}`, config);
+      const { data } = await axios.get(`/api/message/${selectedChat._id}`, config);
       console.log(data);
       setMessages(data);
       setLoading(false);
-
       socket.emit('join chat', selectedChat._id);
     } catch (error) {
       toast({

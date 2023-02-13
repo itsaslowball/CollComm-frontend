@@ -12,7 +12,7 @@ const [content, setContent] = useState();
 
   const submitHandler = async () => {
   try {
-    const { data } = await axios.post(url + "/api/blogs/compose", {
+    const { data } = await axios.post("/api/blogs/compose", {
       title: title,
       postContent: content,
       user: user,

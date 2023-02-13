@@ -52,7 +52,7 @@ const url = "https://colcom-api.onrender.com";
                },
              };
              const { data } = await axios.put(
-              url +  `/api/chat/groupadd`,
+              `/api/chat/groupadd`,
                {
                  chatId: selectedChat._id,
                  userId: user1._id,

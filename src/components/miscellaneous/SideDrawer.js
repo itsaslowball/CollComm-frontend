@@ -75,7 +75,7 @@ const url = "https://colcom-api.onrender.com";
       };
 
       const { data } = await axios.get(
-       url +  `/api/user?search=${search}`,
+        `/api/user?search=${search}`,
         config
       ); /*This fetches the data from the given route and config
       is also send for the user authentication*/

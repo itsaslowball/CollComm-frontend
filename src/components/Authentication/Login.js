@@ -43,7 +43,7 @@ const url = "https://colcom-api.onrender.com";
       };
 
       const { data } = await axios.post(
-        url + "/api/user/login",
+        "/api/user/login",
         { email, password },
         config
       );
